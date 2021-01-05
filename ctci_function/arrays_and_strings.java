@@ -3,9 +3,12 @@ package ctci_function;
 import java.lang.Boolean;
 import java.lang.Math;
 import java.lang.StringBuilder;
+import java.util.ArrayList;
+import ctci_function.Node;
+import java.lang.Math;
 
-public class ctci_problem_functions{
-    
+public class arrays_and_strings{
+
     // Problem 1.5
     public static Boolean oneDiff(String s1, String s2){
         System.out.println("Is \""+s1+"\" one edit away from \""+s2+"\"?");
