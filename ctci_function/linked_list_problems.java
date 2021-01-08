@@ -6,6 +6,7 @@ import java.lang.StringBuilder;
 import java.util.ArrayList;
 import ctci_function.Node;
 import java.lang.Math;
+import java.util.Stack;
 
 public class linked_list_problems {
     
@@ -88,5 +89,38 @@ public class linked_list_problems {
             result = result.next;
         }
         return head.next;
+    }
+
+    public static Node intersection(Node headA, Node headB){
+        // traverse through both lists to get tail and length;
+        // if tail are not equal, no intersection
+        Node tailA = headA;
+        Integer lenA = 0;
+        while(tailA != null){
+            lenA+=1;
+            tailA = tailA.next;
+        }
+        Node tailB = headB;
+        Integer lenB = 0;
+        while(tailB != null){
+            lenB+=1;
+            tailB = tailB.next;
+        }
+        if (tailA != tailB){
+            return null;
+        }
+        Node longer = lenA > lenB ? headA : headB;
+        Node shorter = lenA < lenB ? headA : headB;
+
+        int i = 0;
+        while (i < Math.abs(lenA-lenB)){
+                longer = longer.next;
+                i+=1;
+        }
+        while (shorter != longer){
+            shorter = shorter.next;
+            longer = longer.next;
+        }
+        return longer;
     }
 }

@@ -7,24 +7,28 @@ public class ctci_main{
     public static void main(String[] args){
 
         System.out.println("Main class to run and test coding problems from Cracking the Coding Interview Book.");   
+        
+        Node a = new Node(3);
+        Node b = new Node(1);
+        Node c = new Node(5);
+        Node d = new Node(9);
+        Node e = new Node(4);
+        Node f = new Node(6);
+        Node g = new Node(7);
+        Node h = new Node(2);
+        Node i = new Node(1);
 
-        Node n1 = new Node(9);
-        Node n2 = new Node(7);
-        Node n3 = new Node(8);
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next = g;
+        e.next = f;
+        f.next = null;
+        g.next = h;
+        h.next = i;
 
-        Node n4 = new Node(6);
-        Node n5 = new Node(8);
-        Node n6 = new Node(5);
-
-        n1.next = n2;
-        n2.next = n3;
-
-        n4.next = n5;
-        n5.next = n6;
-
-        Node result = linked_list_problems.sumLists(n1, n4);
-
-        System.out.println("Before/After");
-        ctci_function.Node.printAll(result);
+        Node result = linked_list_problems.intersection(a, e);
+        System.out.println(result.data);
+        // ctci_function.Node.printAll(result);
     }
 }
